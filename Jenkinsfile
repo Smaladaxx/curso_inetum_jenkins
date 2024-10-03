@@ -52,14 +52,13 @@ pipeline {
             steps {
                 script {
                     def usuario = bat(script: 'whoami', returnStdout: true).trim()
-					echo "El usuario del PC es: ${env.USERNAME}" 
+		    echo "El usuario del PC es: ${env.USERNAME}" 
                 }
             }
         }
               stage('Viernes - Crear Proyecto Maven') {
             steps {
                 script {
-                    // Descargar el proyecto básico de Maven y compilarlo
                     bat '''
                     curl -o project.zip
 https://start.spring.io/starter.zip
